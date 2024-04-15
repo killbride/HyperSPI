@@ -335,7 +335,7 @@ void setup()
 			// sck: 7, miso: 34 (no important), MOSI: 11, spi select: 12
 			slave.begin(VSPI, 2, 0, 3, 15);
 		#else
-			slave.begin(VSPI, 2, 0, 3, 15);
+			slave.begin(VSPI);
 		#endif
 
 		xTaskCreatePinnedToCore(task_wait_spi, "task_wait_spi", 2048, NULL, 2, &task_handle_wait_spi, CORE_TASK_SPI_SLAVE);
